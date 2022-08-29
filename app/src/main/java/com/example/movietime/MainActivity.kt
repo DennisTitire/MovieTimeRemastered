@@ -13,14 +13,14 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private lateinit var navHostController: NavHostController
+    private lateinit var navController: NavHostController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MovieTimeTheme {
-                navHostController = rememberNavController()
-                SetupNavGraph(navHostController = navHostController)
+                navController = rememberNavController()
+                SetupNavGraph(navController = navController)
             }
         }
     }

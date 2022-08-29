@@ -6,18 +6,20 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.movietime.presentation.screens.sign_in.SignIn
+import com.example.movietime.presentation.screens.splash.SplashScreen
 import com.example.movietime.util.Components.DETAILS_ARGUMENT_KEY
 
 @Composable
 fun SetupNavGraph(
-    navHostController: NavHostController
+    navController: NavHostController
 ) {
     NavHost(
-        navController = navHostController,
+        navController = navController,
         startDestination = Screen.Splash.route
     ) {
         composable(route = Screen.Splash.route) {
-
+            SplashScreen(navController)
         }
         composable(route = Screen.Welcome.route) {
 
@@ -26,7 +28,7 @@ fun SetupNavGraph(
 
         }
         composable(route = Screen.SignIn.route) {
-
+            SignIn(navController)
         }
         composable(route = Screen.Home.route) {
 
